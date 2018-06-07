@@ -1,22 +1,18 @@
-var n1, i;
-i = 0;
-n1 = parseInt(prompt("Introduce la altura de la silla (min 7 - max30): "));
-
-if(n1 < 7){
-    alert("Introduce un número mayor que 7");
+var numIntroducido = prompt("Introduce un numero para dibujar una silla: ");
+var num = parseInt(numIntroducido);
+if (num < 7 || num > 30) {
+    alert('Debes introducir un numero entre 7 y 30');
 }
-if(n1 > 30){
-    alert("Introduce un número menor que 30");
-}
-
-if(n1 >= 7 && n1 <= 30){
-    for(i=0; i<n1; i++){
-        if(i%1==0){
-            document.write("<br>");
-            document.write(("*"));
-        }
+var x = Math.round(num / 2);
+while (num > 0) {
+    if (num > x) {
+        document.write("<br>" + '*');
     }
+    if (num === x) {
+        document.write("<br>" + '******');
+    }
+    if (num < x) {
+        document.write("<br>" + '*' + "&nbsp" + "&nbsp" + "&nbsp" + "&nbsp" + "&nbsp" + "&nbsp" + "&nbsp" + "&nbsp" + "*");
+    }
+    num--;
 }
-
-
-
