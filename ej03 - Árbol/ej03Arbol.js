@@ -1,20 +1,20 @@
-var max=20;
-	// determina el numero de lineas mostradas
-	var j=1;
-	// contiene el resultado a mostrar
-	var result="";
- 
-	for(i=1;i<=max;i+=2)
-	{
-		result+="<br>"+(Array((1+(Math.ceil(max/2))-j)).join(" ")+Array(i+1).join("*"));
-		j=j+1;
-	}
- 
-	//tronco
-	if(max>=7)
-	{
-		result+="<br>"+(Array((1+(Math.ceil(max/2))-2)).join(" ")+Array(4).join("*"));
-		result+="<br>"+(Array((1+(Math.ceil(max/2))-2)).join(" ")+Array(4).join("*"));
-	}
- 
-	document.getElementById(id).innerHTML=result;
+var numIntroducido = prompt("Introduce un numero de líneas para dibujar un árbol: ");
+var num = parseInt(numIntroducido);
+var espacio = "&nbsp&nbsp";
+if (num < 5) {
+    alert('Debes introducir un numero mayor de 5');
+}
+else {
+    var a = "<br>";
+    var j = 1;
+    for (var i = 0; i < num; i++, j = i + 1) {
+        for (j; j < num; j++) {
+            (a += espacio);
+        }
+        for (j = 0; j < 2 * i + 1; j++) {
+            (a += "*");
+        }
+        a += "<br>";
+    }
+    document.write(a);
+}
